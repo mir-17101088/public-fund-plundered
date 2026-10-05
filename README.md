@@ -19,7 +19,7 @@ Don't edit these files by hand. They're copied here from the project folder by `
 
 Make sure these types are served (older servers may not know them): `.avif` as `image/avif`, `.webp` as `image/webp`, `.woff2` as `font/woff2`.
 
-Suggested caching: `index.html` `no-cache`; `fonts/*` and `vendor/*` `public, max-age=31536000, immutable`; `img/*` `public, max-age=604800`.
+Suggested caching: `index.html` `no-cache`; `fonts/*` and `vendor/*` `public, max-age=31536000, immutable`; `img/*` and `js/*` `public, max-age=604800`. Serve HTML, JS, SVG and XML with gzip or Brotli: the page is measured with compression on.
 
 **nginx:**
 
@@ -80,11 +80,10 @@ A Vercel preview (`*.vercel.app`) sends `X-Robots-Tag: noindex`, so it never com
 
 | Path | What |
 |---|---|
-| `index.html` | The whole story, every paragraph in the HTML (readable with JavaScript off) |
-| `css/site.css` | The one stylesheet |
-| `js/story.js`, `js/main.js` | Scroll steps, reveals, the motion scenes and the photo carousel |
+| `index.html` | The whole story, every paragraph in the HTML (readable with JavaScript off), with its stylesheet inlined |
+| `js/story.min.js`, `js/main.min.js` | Scroll steps, reveals, the motion scenes and the photo carousel (minified) |
 | `vendor/` | GSAP and ScrollTrigger (loaded after the page, skipped under reduced motion) |
-| `fonts/` | Newsreader and IBM Plex (WOFF2, OFL licences included) |
+| `fonts/` | Newsreader and IBM Plex (WOFF2, cut to the characters the page uses; OFL licences included) |
 | `img/` | Photos (AVIF, WebP, JPEG at several sizes), share images, favicon |
 | `robots.txt`, `sitemap.xml` | For search engines (see section 2) |
 | `vercel.json` | Vercel preview settings only |
