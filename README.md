@@ -1,4 +1,4 @@
-# One family, eight firms and Tk 1200 cr plundering of public funds
+# Eight firms, one family, Tk 1,200 cr ‘siphoned off’
 
 The Daily Star, by Sukanta Halder. Photos: Habibur Rahman. Design & Development: Zyma Islam, Mir Rownak.
 
